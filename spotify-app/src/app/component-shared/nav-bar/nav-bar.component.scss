@@ -95,14 +95,14 @@ nav {
   &__list-anchor-home::before {
     @include desktop {
       content: url('/assets/img/home-icon.png');
-      margin-right: 10px;
+      margin-right: 15px;
     }
   }
 
   &__list-anchor-search::before {
     @include desktop {
       content: url('/assets/img/search-icon.png');
-      margin-right: 10px;
+      margin-right: 15px;
     }
   }
 
