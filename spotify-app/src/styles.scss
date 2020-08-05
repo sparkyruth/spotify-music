@@ -1,5 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-/* You can add global styles to this file, and also import other style files */
+// SCSS Styles
 
 body {
     background-color: black;
@@ -10,7 +9,7 @@ hr {
     border-color: white;
 }
 
-.puntero {
+.pointer {
     cursor: pointer;
 }
 
@@ -38,7 +37,7 @@ hr {
 }
 
 
-/* Animaciones */
+// SCSS Animations
 
 .animated {
     -webkit-animation-duration: 1s;
