@@ -31,7 +31,19 @@ $black: black;
         padding-left: 18.750px;
 
         @include desktop {
-            font-size: 24px;
+            width: 500px;
+            padding-left: 64px;
         }
+    }
+
+    &__new-releases-section {
+      @include desktop {
+        margin: 0 auto;
+        max-width: 90%;
+        padding-bottom: 60px;
+
+        display: flex;
+        flex-wrap: wrap;
+      }
     }
 }
