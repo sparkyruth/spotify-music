@@ -12,6 +12,7 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void { /*empty*/ }
 
+  // update variable which controls side bar visibility
   public openOrCloseNav(): void {
     this.openSideBar = !this.openSideBar;
     console.log('open side bar:', this.openSideBar);
