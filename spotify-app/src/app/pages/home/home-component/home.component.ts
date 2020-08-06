@@ -13,6 +13,11 @@ export class HomeComponent implements OnInit {
   constructor(private globalService: GlobalService) { /*empty*/ }
 
   ngOnInit(): void {
+    this.getNewReleases();
+  }
+
+  // call service to get new releases from spotify
+  public getNewReleases(): void {
     this.globalService.getNewReleases().subscribe((data: any) => {
       this.newReleases = data;
       console.log('Data:', data);
@@ -23,5 +28,4 @@ export class HomeComponent implements OnInit {
       console.log('Complete!');
     });
   }
-
 }
