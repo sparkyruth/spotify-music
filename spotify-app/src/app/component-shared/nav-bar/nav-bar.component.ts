@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
+  public openSideBar: boolean = false;
 
-  constructor() { }
+  constructor() { /*empty*/ }
 
-  ngOnInit(): void {
+  ngOnInit(): void { /*empty*/ }
+
+  public openNav(): void {
+    this.openSideBar = true;
+  }
+
+  public closeNav(): void {
+    this.openSideBar = false;
   }
 
 }
