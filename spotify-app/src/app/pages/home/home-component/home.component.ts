@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { GlobalService } from '../../../services/global.service';
+import { NewReleasesItem } from 'src/app/models/new-releases-model';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { GlobalService } from '../../../services/global.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public newReleases: any[] = [];
+  public newReleases: NewReleasesItem[] = [];
 
   constructor(private globalService: GlobalService) { /*empty*/ }
 
