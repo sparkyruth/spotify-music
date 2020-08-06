@@ -21,14 +21,11 @@
     Spotify
   </div>
   <div class="side-bar-btn__btn-container">
-    <button class="side-bar-btn__btn" (click)="openNav()">☰</button>  
+    <button class="side-bar-btn__btn" (click)="openOrCloseNav()">☰</button>  
   </div>
 </div>
 
 <div class="side-bar" [ngClass]="openSideBar ? 'side-bar--visible' : 'side-bar--hide'">
-  <div class="side-bar__close-btn-container">
-    <a class="side-bar__close-btn" (click)="closeNav()">x</a>
-  </div>
   <div>
     <ul>
       <li class="side-bar__list-item" routerLinkActive="active">
