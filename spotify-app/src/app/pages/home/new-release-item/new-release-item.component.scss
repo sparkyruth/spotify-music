@@ -1,0 +1,70 @@
+// SCSS Variables
+$layout_bp_mobile: 360px;
+$layout_bp_tablet: 800px;
+$layout_bp_desktop: 1000px;
+
+$dark-gray: #282828;
+// $dark-gray: #343a40;
+// $dark-gray: #181818;
+$light-gray: #b3b3b3;
+$black: black;
+
+// SCSS Mixins
+@mixin tablet {
+  @media only screen and (min-width: $layout_bp_tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: $layout_bp_desktop) {
+    @content;
+  }
+}
+
+// SCSS Styles
+.new-release-item {
+    max-width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+
+    background-color: $dark-gray;
+
+    &__img {
+        width: 150px;
+    }
+
+    &__title {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    &__bottom-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+
+      align-items: baseline;
+    }
+
+    &__artist {
+      margin-right: 5px;
+    }
+
+    &__type-container {
+      margin-left: 20px;
+      border-radius: 20px;
+
+      background-color: #181818;
+    }
+
+    &__type {
+      margin: 0px;
+      padding: 5px 10px 5px 10px;
+
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+}

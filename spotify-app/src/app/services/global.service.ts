@@ -15,7 +15,7 @@ export class GlobalService {
   public getNewReleases(): Observable<FormattedNewReleases[]> {
     // define header to specify token
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQCiSazJtavFxgIQi8Xj3bC4-kvfTv5_B66ixtjURSSfb2cljt5DNGsv5Rk14R5IVA5LS32Txw_9oGb6eAM'
+      'Authorization': 'Bearer BQAa8HxKlfRK5SolQ0ZYpKLG5O_lRnzb5yR-9tBEYfhB-Si28vRd9s9rK2mJZEHib65CJSssr3SWzyUfl9o'
     });
 
     // execute request
