@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
 // Models
-import { APINewReleases, NewReleasesItem } from '../models/new-releases-model';
+import { APINewReleases, NewReleasesItem, FormattedNewReleases } from '../models/new-releases-model';
 
 @Injectable()
 export class GlobalService {
@@ -12,7 +12,7 @@ export class GlobalService {
 
   constructor(private http: HttpClient) { /*empty*/ }
 
-  public getNewReleases(): Observable<NewReleasesItem[]> {
+  public getNewReleases(): Observable<FormattedNewReleases[]> {
     // define header to specify token
     const headers = new HttpHeaders({
       'Authorization': 'Bearer BQCiSazJtavFxgIQi8Xj3bC4-kvfTv5_B66ixtjURSSfb2cljt5DNGsv5Rk14R5IVA5LS32Txw_9oGb6eAM'
@@ -24,8 +24,11 @@ export class GlobalService {
         if (!res) {
           throw new Error('Value expected!');
         } else {
-          const newReleasesItems: NewReleasesItem[] = res.albums.items;
-          return newReleasesItems;
+          const formattedItems: FormattedNewReleases[] = res.albums.items.map((
+            { images, name, artists, type }) => (
+            { images, name, artists, type }
+            ));
+          return formattedItems;
         }
       }),
       catchError((err) => {

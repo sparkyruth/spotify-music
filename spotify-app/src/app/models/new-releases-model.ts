@@ -1,3 +1,10 @@
+export interface FormattedNewReleases{
+    images: Image[];
+    name: string;
+    artists: Artist[];
+    type: string;
+}
+
 export interface APINewReleases {
     albums: Albums;
 }
@@ -13,7 +20,7 @@ export interface Albums {
 }
 
 export interface NewReleasesItem {
-    album_type: AlbumTypeEnum;
+    album_type: 'album' | 'single';
     artists: Artist[];
     available_markets: string[];
     external_urls: ExternalUrls;
@@ -24,13 +31,8 @@ export interface NewReleasesItem {
     release_date: Date;
     release_date_precision: ReleaseDatePrecision;
     total_tracks: number;
-    type: AlbumTypeEnum;
+    type: 'album' | 'single';
     uri: string;
-}
-
-export enum AlbumTypeEnum {
-    Album = "album",
-    Single = "single",
 }
 
 export interface Artist {
