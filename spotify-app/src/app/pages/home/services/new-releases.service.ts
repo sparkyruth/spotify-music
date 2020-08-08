@@ -7,7 +7,7 @@ import { FormattedNewReleases, APINewReleases } from 'src/app/models/new-release
 // Services
 import { GlobalService } from 'src/app/services/global.service';
 
-@Injectable() // provide service in module
+@Injectable() // service provided in module
 export class NewReleasesService {
   private newReleasesUrl: string = 'browse/new-releases';
 

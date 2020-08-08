@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { GlobalService } from '../../../services/global.service';
+// Models
 import { NewReleasesItem } from 'src/app/models/new-releases-model';
+
+// Services
+import { NewReleasesService } from '../services/new-releases.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +14,7 @@ import { NewReleasesItem } from 'src/app/models/new-releases-model';
 export class HomeComponent implements OnInit {
   public newReleases: NewReleasesItem[] = [];
 
-  constructor(private globalService: GlobalService) { /*empty*/ }
+  constructor(private newReleasesService: NewReleasesService) { /*empty*/ }
 
   ngOnInit(): void {
     this.getNewReleases();
@@ -19,7 +22,7 @@ export class HomeComponent implements OnInit {
 
   // call service to get new releases from spotify
   public getNewReleases(): void {
-    this.globalService.getNewReleases().subscribe((data: any) => {
+    this.newReleasesService.getNewReleases().subscribe((data: any) => {
       this.newReleases = data;
       console.log('Data:', data);
     }, (err) => {
