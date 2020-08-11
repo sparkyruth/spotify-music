@@ -1,1 +1,22 @@
-<p>search works!</p>
+<section class="search-section">
+    <div class="search-section__nav-bar">
+        <div class="search-section__btn-container">
+            <button class="search-section__back-btn" role="button" type="button">
+                <img src="assets/img/left-arrow.svg" alt="left arrow image">
+            </button>
+        </div>
+        <div class="search-section__input-container">
+            <input class="search-section__input" type="text" id="inputSearch" placeholder="Search artist or track" (keyup)="search(searchTerm.value)" #searchTerm>
+        </div>
+    </div>  
+    <div class="search-section__search-item-container" *ngIf="artistsList.length > 0">
+        <div class="search-section__title-container">
+            <h2 class="search-section__title">Artists</h2>
+        </div> 
+        <div class="search-section__search-item">
+            <app-search-artist-item
+            [artist]="artist" *ngFor="let artist of artistsList"
+            ></app-search-artist-item>
+        </div>         
+    </div>  
+</section>
