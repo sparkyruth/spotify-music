@@ -7,12 +7,14 @@ import { ArtistComponent } from './artist-component/artist.component';
 // Services
 import { ArtistService } from './services/artist.service';
 import { ArtistTopTrackComponent } from './artist-top-track/artist-top-track.component';
+import { UriSecurityPipe } from './pipes/uri-security.pipe';
 
 
 @NgModule({
   declarations: [
     ArtistComponent,
-    ArtistTopTrackComponent
+    ArtistTopTrackComponent,
+    UriSecurityPipe
   ],
   imports: [
     CommonModule,
