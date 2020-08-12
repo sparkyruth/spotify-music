@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // Models
-import { NewReleasesItem } from 'src/app/models/new-releases-model';
+import { NewReleasesItem } from '../models/new-releases-model';
 
 // Services
 import { NewReleasesService } from '../services/new-releases.service';

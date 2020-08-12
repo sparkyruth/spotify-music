@@ -3,7 +3,8 @@ import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
 // Models
-import { FormattedNewReleases, APINewReleases } from 'src/app/models/new-releases-model';
+import { FormattedNewReleases, APINewReleases } from '../models/new-releases-model';
+
 // Services
 import { GlobalService } from 'src/app/services/global.service';
 

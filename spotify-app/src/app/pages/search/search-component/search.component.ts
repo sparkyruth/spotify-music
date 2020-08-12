@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 // Services
 import { SearchService } from '../services/search.service';
@@ -12,14 +13,14 @@ export class SearchComponent implements OnInit {
   public artistsList: any[] = [];
   public tracksList: any[] = [];
 
-  constructor(private searchService: SearchService) { /*empty*/ }
+  constructor(private searchService: SearchService, private location: Location) { /*empty*/ }
 
   ngOnInit(): void { /*empty*/ }
 
+  // search both artist and track
   public search(term: string): void {
     console.log('Term to find:', term);
 
-    // search both artist and track
     this.searchService.getTracksAndArtists(term).subscribe((data: any) => {
       this.artistsList = data.artists.items;
       this.tracksList = data.tracks.items;
@@ -35,6 +36,11 @@ export class SearchComponent implements OnInit {
     }, () => {
       console.log('Complete!');
     });
+  }
+
+  // go back to previous url
+  public goBack(): void {
+    this.location.back();
   }
 
 }
