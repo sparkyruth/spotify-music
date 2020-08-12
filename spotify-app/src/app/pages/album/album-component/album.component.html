@@ -1,4 +1,4 @@
-<div class="album-tracks" *ngIf="album"> 
+<div class="album-tracks" *ngIf="album != null"> 
     <div class="album-tracks__btn-container">
         <button class="album-tracks__back-btn" role="button" type="button" (click)="goBack()">
             <img src="assets/img/left-arrow.svg" alt="left arrow image">
@@ -9,10 +9,10 @@
             <img class="album-tracks__img" [src]="album.images | errorImage" [alt]="album.name">
         </div>
         <div class="album-tracks__info-container">
-            <div class="album-tracks__type-container">
+            <div class="album-tracks__type-container" *ngIf="album.type">
                 <p class="album-tracks__type">{{ album.type | uppercase}}</p>
             </div>
-            <div class="album-tracks__name-container">
+            <div class="album-tracks__name-container" *ngIf="album.name">
                 <h1 class="album-tracks__name">{{ album.name }}</h1>
             </div>
         </div>

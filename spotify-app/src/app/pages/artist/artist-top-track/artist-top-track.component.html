@@ -1,4 +1,4 @@
-<li class="top-track-item">
+<li class="top-track-item" *ngIf="topTrack">
     <div class="top-track-item__left">
         <div class="top-track-item__img-container">
             <img class="top-track-item__img" [src]="topTrack.album.images | errorImage" alt="{{ topTrack.name }}">

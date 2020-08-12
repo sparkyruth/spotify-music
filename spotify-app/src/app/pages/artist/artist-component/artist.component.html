@@ -27,7 +27,7 @@
         </div>
         <div class="artist-section__top-tracks-container">
             <h2 class="artist-section__top-tracks-title">Top Tracks</h2>
-            <div class="artist-section__top-tracks-list-container">
+            <div class="artist-section__top-tracks-list-container" *ngIf="topTracks.length > 0">
                 <ul class="artist-section__top-tracks-list">
                     <app-artist-top-track [topTrack]="topTrack" *ngFor="let topTrack of topTracks">
                     </app-artist-top-track>
@@ -36,7 +36,7 @@
         </div>
         <div class="artist-section__albums-container">
             <h2 class="artist-section__albums-title">Albums</h2>
-            <div class="artist-section__albums-list-container">
+            <div class="artist-section__albums-list-container" *ngIf="albums.length > 0">
                 <app-artist-albums [album]="album" *ngFor="let album of albums"></app-artist-albums>
             </div>
         </div>
