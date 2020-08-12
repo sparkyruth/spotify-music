@@ -9,6 +9,7 @@ import { LoadingComponent } from '../shared/loading/loading.component';
 
 // Services
 import { NewReleasesService } from './services/new-releases.service';
+import { PipesModule } from 'src/app/pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NewReleasesService } from './services/new-releases.service';
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    PipesModule
   ],
   providers: [
     NewReleasesService

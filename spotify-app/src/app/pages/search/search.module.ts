@@ -10,22 +10,20 @@ import { SearchTrackItemComponent } from './search-track-item/search-track-item.
 
 // Services
 import { SearchService } from './services/search.service';
-import { NoImagePipe } from './pipe/no-image.pipe';
-
 
 // Pipes
-// import { NoImagePipe } from '../../pipes/no-image.pipe';
+import { PipesModule } from '../../pipes/pipes.module';
 
 @NgModule({
   declarations: [
     SearchComponent,
     SearchArtistItemComponent,
-    NoImagePipe,
     SearchTrackItemComponent,
   ],
   imports: [
     CommonModule,
     SearchRoutingModule,
+    PipesModule,
   ],
   providers: [
     SearchService,

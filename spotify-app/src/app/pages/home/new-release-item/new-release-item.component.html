@@ -1,6 +1,6 @@
 <div class="new-release-item animated fadeIn" *ngIf="newRelease" (click)="navigate(newRelease)">
     <div class="new-release-item__img-container">
-        <img class="new-release-item__img" [src]="newRelease.images[0].url" alt="newRelease.name" >
+        <img class="new-release-item__img" [src]="newRelease.images | errorImage" alt="newRelease.name" >
     </div>
     <div class="new-release-item__title-container">
         <h4 class="new-release-item__title">{{ newRelease.name | uppercase}}</h4>

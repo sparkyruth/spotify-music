@@ -1,6 +1,6 @@
 <div class="search-artist-item animated fadeIn" *ngIf="artist" (click)="navigate(artist)">  
     <div class="search-artist-item__img-container">
-        <img class="search-artist-item__img" [src]="artist.images | noImage" [alt]="artist.name">
+        <img class="search-artist-item__img" [src]="artist.images | errorImage" [alt]="artist.name">
     </div>
     <div class="search-artist-item__title-container">
         <h4 class="search-artist-item__title">{{ artist.name }}</h4>
