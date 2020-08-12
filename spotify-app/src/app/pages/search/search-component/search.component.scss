@@ -22,7 +22,6 @@ $black: black;
 
 // SCSS Styles
 .search-section {
-  // background-color: $dark-gray;
 
   &__nav-bar {
     max-width: 98%;
@@ -43,7 +42,6 @@ $black: black;
     height: 32px;
     width: 32px;
     border-radius: 50%;
-    // background-color: rgba(0, 0, 0, .7);
     background-color: $dark-gray;
     color: #fff;
     display: inline-flex;
@@ -99,6 +97,6 @@ $black: black;
       display: flex;
       flex-wrap: wrap;
     }
-  }
+  } 
 
 }

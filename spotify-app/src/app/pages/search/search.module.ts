@@ -6,10 +6,12 @@ import { SearchRoutingModule } from './search-routing.module';
 // Components
 import { SearchComponent } from './search-component/search.component';
 import { SearchArtistItemComponent } from './search-artist-item/search-artist-item.component';
+import { SearchTrackItemComponent } from './search-track-item/search-track-item.component';
 
 // Services
 import { SearchService } from './services/search.service';
 import { NoImagePipe } from './pipe/no-image.pipe';
+
 
 // Pipes
 // import { NoImagePipe } from '../../pipes/no-image.pipe';
@@ -18,7 +20,8 @@ import { NoImagePipe } from './pipe/no-image.pipe';
   declarations: [
     SearchComponent,
     SearchArtistItemComponent,
-    NoImagePipe
+    NoImagePipe,
+    SearchTrackItemComponent,
   ],
   imports: [
     CommonModule,

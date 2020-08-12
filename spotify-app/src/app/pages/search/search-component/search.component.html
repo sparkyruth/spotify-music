@@ -17,6 +17,14 @@
             <app-search-artist-item
             [artist]="artist" *ngFor="let artist of artistsList"
             ></app-search-artist-item>
-        </div>         
+        </div>        
+        <div class="search-section__title-container">
+            <h2 class="search-section__title">Songs</h2>
+        </div>
+        <div class="search-section__search-item">
+            <app-search-track-item
+            [track]="track" *ngFor="let track of tracksList"
+            ></app-search-track-item>
+        </div> 
     </div>  
 </section>
