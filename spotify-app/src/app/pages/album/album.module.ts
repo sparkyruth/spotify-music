@@ -5,11 +5,13 @@ import { AlbumRoutingModule } from './album-routing.module';
 import { AlbumComponent } from './album-component/album.component';
 import { AlbumService } from './services/album.service';
 import { UriSecurityPipe } from './pipes/uri-security.pipe';
+import { NoImagePipe } from './pipes/no-image.pipe';
 
 @NgModule({
   declarations: [
     AlbumComponent,
-    UriSecurityPipe
+    UriSecurityPipe,
+    NoImagePipe
   ],
   imports: [
     CommonModule,

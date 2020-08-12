@@ -24,6 +24,7 @@ export class SearchComponent implements OnInit {
 
   // search both artist and track
   public search(term: string): void {
+    debugger
     console.log('Term to find:', term);
 
     // update url with term
@@ -44,11 +45,6 @@ export class SearchComponent implements OnInit {
     }, () => {
       console.log('Complete!');
     });
-  }
-
-  // go back to search
-  public navigate(): void {
-    this.router.navigate(['/search']);
   }
 
 }
