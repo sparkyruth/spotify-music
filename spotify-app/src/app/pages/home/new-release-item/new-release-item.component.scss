@@ -35,6 +35,8 @@ $black: black;
     @include desktop {
       width: 270px;
       height: 300px;
+
+      cursor: pointer;
     }
 
     &__img {
