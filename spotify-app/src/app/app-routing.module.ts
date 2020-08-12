@@ -14,7 +14,12 @@ const routes: Routes = [
   },
   { // route => /search
     path: 'search',
-    loadChildren: () => import('./pages/search/search.module').then(m => m.SearchModule) }
+    loadChildren: () => import('./pages/search/search.module').then(m => m.SearchModule) 
+  },
+  { // route => /search/term
+    path: 'search/:term',
+    loadChildren: () => import('./pages/search/search.module').then(m => m.SearchModule) 
+  }
 ];
 
 @NgModule({

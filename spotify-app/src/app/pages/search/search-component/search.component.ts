@@ -3,6 +3,7 @@ import { Location } from '@angular/common';
 
 // Services
 import { SearchService } from '../services/search.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -13,7 +14,11 @@ export class SearchComponent implements OnInit {
   public artistsList: any[] = [];
   public tracksList: any[] = [];
 
-  constructor(private searchService: SearchService, private location: Location) { /*empty*/ }
+  constructor(
+    private searchService: SearchService,
+    private location: Location,
+    private router: Router
+    ) { /*empty*/ }
 
   ngOnInit(): void { /*empty*/ }
 
@@ -21,11 +26,14 @@ export class SearchComponent implements OnInit {
   public search(term: string): void {
     console.log('Term to find:', term);
 
+    // update url with term
+    this.router.navigate(['search', term]);
+
     this.searchService.getTracksAndArtists(term).subscribe((data: any) => {
       this.artistsList = data.artists.items;
       this.tracksList = data.tracks.items;
 
-      // ordenar por popularidad
+      // TO-DO: ordenar por popularidad
       console.log('Data:', data);
       console.log('Artists List:', this.artistsList);
       console.log('Tracks List:', this.tracksList);
