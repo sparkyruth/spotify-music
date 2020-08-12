@@ -33,6 +33,7 @@ export class AlbumComponent implements OnInit {
     });
   }
 
+  // get album info
   public getAlbum(): void {
     this.albumService.getAlbum(this.albumId).subscribe((album: any) => {
       this.album = album;
