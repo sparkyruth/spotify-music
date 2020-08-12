@@ -1,4 +1,4 @@
-<section class="artist-section">
+<section class="artist-section" *ngIf="artist != null">
     <div class="artist-section__header-container">
         <div class="artist-section__btn-container">
             <button class="artist-section__back-btn" role="button" type="button" [routerLink]="['/search']">

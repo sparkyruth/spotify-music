@@ -1,4 +1,4 @@
-<div class="album-item">
+<div class="album-item" *ngIf="album">
     <div class="album-item__img-container">
         <img class="album-item__img" [src]="album.images | errorImage" alt="{{ album.name }}">
     </div>
