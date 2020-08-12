@@ -12,6 +12,7 @@ export class ArtistComponent implements OnInit {
   public artistId: string = '';
   public artist: any | null = null;
   public topTracks: any[] = [];
+  public albums: any[] = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -23,6 +24,7 @@ export class ArtistComponent implements OnInit {
     this.getActivatedRoute();
     this.getArtist();
     this.getTopTracks();
+    this.getAlbums();
   }
 
   // get artist id from active route
@@ -56,6 +58,19 @@ export class ArtistComponent implements OnInit {
       console.error(err.message);
     }, () => {
       console.log('Artist Complete!');
+    });
+  }
+
+  // get artist top tracks
+  public getAlbums(): void {
+    this.artistService.getAlbums(this.artistId).subscribe((albums: any) => {
+      this.albums = albums;
+      console.log('Albums Data:', albums);
+    }, (err) => {
+      console.log('Albums Error:', err);
+      console.error(err.message);
+    }, () => {
+      console.log('Albums Complete!');
     });
   }
 }

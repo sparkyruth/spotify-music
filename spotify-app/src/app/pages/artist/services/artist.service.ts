@@ -32,4 +32,21 @@ export class ArtistService {
         throw new Error(err.message);
       }));
   }
+
+  // get artist top tracks
+  public getAlbums(artistId: string): Observable<any> {
+    const albumUrl: string = `artists/${ artistId }/albums`;
+    return this.globalService.getQuery(albumUrl).pipe(
+      map((res: any) => {
+        if (!res) {
+          throw new Error('Value expected!');
+        } else {
+          // TO-DO: tipar
+          return res.items;
+        }
+      }),
+      catchError((err) => {
+        throw new Error(err.message);
+      }));
+  }
 }

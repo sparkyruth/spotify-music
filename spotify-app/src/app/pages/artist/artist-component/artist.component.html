@@ -15,24 +15,30 @@
             <span>{{ artist.followers.total }} followers</span>
         </div>
         <div class="artist-section__profile-btn-container">
-            <a class="artist-section__profile-btn artist-section__btn" [href]="artist.external_urls.spotify" target="_blank">Profile</a>
+            <a class="artist-section__profile-btn artist-section__btn" [href]="artist.external_urls.spotify"
+                target="_blank">Profile</a>
         </div>
     </div>
     <div class="artist-section__main-container">
         <div class="artist-section__btn-container">
-            <button class="artist-section__general-btn artist-section__btn" routerLinkActive="activate-link" [routerLink]="['/artist', artistId]">Overview</button>
+            <button class="artist-section__general-btn artist-section__btn" routerLinkActive="activate-link"
+                [routerLink]="['/artist', artistId]">Overview</button>
             <!-- <button class="artist-section__related-btn artist-section__btn"routerLinkActive="activate-link" [routerLink]="['/album', artistId]">Related Artists</button> -->
         </div>
         <div class="artist-section__top-tracks-container">
             <h2 class="artist-section__top-tracks-title">Top Tracks</h2>
             <div class="artist-section__top-tracks-list-container">
                 <ul class="artist-section__top-tracks-list">
-                    <app-artist-top-track
-                    [topTrack]="topTrack"
-                    *ngFor="let topTrack of topTracks"
-                    ></app-artist-top-track>
+                    <app-artist-top-track [topTrack]="topTrack" *ngFor="let topTrack of topTracks">
+                    </app-artist-top-track>
                 </ul>
             </div>
-        </div>        
-    </div>  
+        </div>
+        <div class="artist-section__albums-container">
+            <h2 class="artist-section__albums-title">Albums</h2>
+            <div class="artist-section__albums-list-container">
+                <app-artist-albums [album]="album" *ngFor="let album of albums"></app-artist-albums>
+            </div>
+        </div>
+    </div>
 </section>

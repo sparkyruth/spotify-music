@@ -8,13 +8,15 @@ import { ArtistComponent } from './artist-component/artist.component';
 import { ArtistService } from './services/artist.service';
 import { ArtistTopTrackComponent } from './artist-top-track/artist-top-track.component';
 import { UriSecurityPipe } from './pipes/uri-security.pipe';
+import { ArtistAlbumsComponent } from './artist-albums/artist-albums.component';
 
 
 @NgModule({
   declarations: [
     ArtistComponent,
     ArtistTopTrackComponent,
-    UriSecurityPipe
+    UriSecurityPipe,
+    ArtistAlbumsComponent
   ],
   imports: [
     CommonModule,
