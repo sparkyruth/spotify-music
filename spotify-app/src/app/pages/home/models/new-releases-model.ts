@@ -1,4 +1,5 @@
 export interface FormattedNewReleases{
+    id: string;
     images: Image[];
     name: string;
     artists: Artist[];

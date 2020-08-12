@@ -21,8 +21,8 @@ export class NewReleasesService {
           throw new Error('Value expected!');
         } else {
           const formattedItems: FormattedNewReleases[] = res.albums.items.map((
-            { images, name, artists, type }) => (
-            { images, name, artists, type }
+            { id, images, name, artists, type }) => (
+            { id, images, name, artists, type }
             ));
           return formattedItems;
         }

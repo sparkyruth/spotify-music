@@ -19,7 +19,7 @@ export class NewReleaseItemComponent implements OnInit {
   public navigate(newRelease: any): void {
     let newReleaseId: number = 0;
 
-    newRelease.type === 'artist' ?  newReleaseId = newRelease.id : newReleaseId = newRelease.artists[0].id;
+    newRelease.type === 'artist' ?  newReleaseId = newRelease.id : newReleaseId = newRelease.id;
     console.log('new release type:', newRelease.type);
     console.log('New Release Id:', newReleaseId);
 
