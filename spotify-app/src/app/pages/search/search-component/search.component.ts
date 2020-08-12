@@ -24,7 +24,6 @@ export class SearchComponent implements OnInit {
 
   // search both artist and track
   public search(term: string): void {
-    debugger
     console.log('Term to find:', term);
 
     // update url with term
@@ -34,7 +33,6 @@ export class SearchComponent implements OnInit {
       this.artistsList = data.artists.items;
       this.tracksList = data.tracks.items;
 
-      // TO-DO: ordenar por popularidad
       console.log('Data:', data);
       console.log('Artists List:', this.artistsList);
       console.log('Tracks List:', this.tracksList);

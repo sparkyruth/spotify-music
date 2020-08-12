@@ -6,7 +6,6 @@ import { AlbumRoutingModule } from './album-routing.module';
 
 // Components
 import { AlbumComponent } from './album-component/album.component';
-
 // Services
 import { AlbumService } from './services/album.service';
 
