@@ -13,16 +13,19 @@ import { NewReleasesService } from '../services/new-releases.service';
 })
 export class HomeComponent implements OnInit {
   public newReleases: NewReleasesItem[] = [];
+  public loading: boolean = false;
 
   constructor(private newReleasesService: NewReleasesService) { /*empty*/ }
 
   ngOnInit(): void {
+    this.loading = true;
     this.getNewReleases();
   }
 
   // call service to get new releases from spotify
   public getNewReleases(): void {
     this.newReleasesService.getNewReleases().subscribe((data: any) => {
+      this.loading = false;
       this.newReleases = data;
       console.log('Data:', data);
     }, (err) => {
