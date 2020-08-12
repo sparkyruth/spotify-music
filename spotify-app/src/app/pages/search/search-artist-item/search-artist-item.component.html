@@ -1,4 +1,4 @@
-<div class="search-artist-item animated fadeIn" *ngIf="artist">  
+<div class="search-artist-item animated fadeIn" *ngIf="artist" (click)="navigate(artist)">  
     <div class="search-artist-item__img-container">
         <img class="search-artist-item__img" [src]="artist.images | noImage" [alt]="artist.name">
     </div>

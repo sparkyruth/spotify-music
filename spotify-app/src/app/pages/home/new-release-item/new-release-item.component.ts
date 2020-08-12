@@ -20,9 +20,10 @@ export class NewReleaseItemComponent implements OnInit {
     let newReleaseId: number = 0;
 
     newRelease.type === 'artist' ?  newReleaseId = newRelease.id : newReleaseId = newRelease.artists[0].id;
-    this.router.navigate(['/artist', newReleaseId]);
-    // this.router.navigate(['/album', newReleaseId]);
-
+    console.log('new release type:', newRelease.type);
     console.log('New Release Id:', newReleaseId);
+
+    this.router.navigate(['/artist', newReleaseId]);
+    this.router.navigate(['/album', newReleaseId]);
   }
 }

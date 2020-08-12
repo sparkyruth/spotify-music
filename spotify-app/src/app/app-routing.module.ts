@@ -22,6 +22,10 @@ const routes: Routes = [
   { // route => /artist/id
     path: 'artist/:id',
     loadChildren: () => import('./pages/artist/artist.module').then(m => m.ArtistModule)
+  },
+  { // route => /album/id
+    path: 'album/:id',
+    loadChildren: () => import('./pages/album/album.module').then(m => m.AlbumModule)
   }
 ];
 

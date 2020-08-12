@@ -31,8 +31,9 @@ $black: black;
     @include desktop {
       width: 166px;
       height: 240px;
-
       margin-right: 15px;
+
+      cursor: pointer;
     }
 
     &__img-container {
