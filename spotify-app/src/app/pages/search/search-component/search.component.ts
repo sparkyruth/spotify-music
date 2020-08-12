@@ -46,9 +46,9 @@ export class SearchComponent implements OnInit {
     });
   }
 
-  // go back to previous url
-  public goBack(): void {
-    this.location.back();
+  // go back to search
+  public navigate(): void {
+    this.router.navigate(['/search']);
   }
 
 }
