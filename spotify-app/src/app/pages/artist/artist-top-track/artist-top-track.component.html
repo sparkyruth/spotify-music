@@ -1,0 +1,17 @@
+<li class="top-track-item">
+    <div class="top-track-item__left">
+        <div class="top-track-item__img-container">
+            <img class="top-track-item__img" [src]="topTrack.album.images[0].url" alt="{{ topTrack.name }}">
+        </div>
+        <div class="top-track-item__name-container">
+            <p class="top-track-item__name">{{ topTrack.name }}</p>
+        </div>
+        <div class="top-track-item__player" *ngIf="play">
+            <audio class="top-track-item__audio" [src]="topTrack.preview_url" controls></audio>
+        </div>
+    </div>    
+    <div class="top-track-item__player-btn-container">
+        <p class="top-track-item__duration">{{ topTrack.duration_ms }}</p>
+        <a class="top-track-item__player-anchor" (click)="player()">Preview</a>
+    </div>
+</li>

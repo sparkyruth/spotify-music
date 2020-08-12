@@ -1,0 +1,106 @@
+// SCSS Variables
+$layout_bp_mobile: 360px;
+$layout_bp_tablet: 800px;
+$layout_bp_desktop: 1000px;
+
+$dark-gray: #181818;
+$med-gray: #282828;
+$light-gray: #b3b3b3;
+$black: black;
+
+// SCSS Mixins
+@mixin tablet {
+  @media only screen and (min-width: $layout_bp_tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: $layout_bp_desktop) {
+    @content;
+  }
+}
+
+// SCSS Styles
+.activate-link {
+  background-color: $light-gray;
+}
+
+.artist-section {
+  padding-top: 20px;
+  width: 97%;
+  margin: 0 auto;
+
+  &__header-img {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+  }
+
+  &__back-btn {
+    padding-right: 7px;
+    border: none;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background-color: $dark-gray;
+    color: #fff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+  }
+
+  &__header-img-container {
+    margin-top: 20px;
+  }
+  &__main-container {
+    margin-top: 40px;
+    padding-top: 20px;
+    // position: absolute;
+    width: 900px;
+    background-color: $dark-gray;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  &__name {
+    padding-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  &__followers-container {
+    margin-bottom: 17px;
+  }
+
+  &__btn {
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    background-color: transparent;
+    padding: 7px 15px;
+    border: 1px solid hsla(0, 0%, 100%, 0.3);
+    box-sizing: border-box;
+    border-radius: 4px;
+    border-color: #fff;
+  }
+
+  &__btn:hover {
+    background-color: $dark-gray;
+  }
+
+  &__related-btn {
+    margin-left: 10px;
+  }
+
+  &__top-tracks-container {
+      margin-top: 30px;
+  }
+}

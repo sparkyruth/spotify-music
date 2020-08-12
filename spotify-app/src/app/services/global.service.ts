@@ -11,7 +11,7 @@ export class GlobalService {
 
     // define header to specify token
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQCC8-sApXeIHECGsWLPYJmCn3n7Tbr15in-friFoCKNniU1xXQJ11tiHzWXFty4DEzOvnzslyE9VF7KwfU'
+      'Authorization': 'Bearer BQBLIGB2gRWYuCI5h9gdXWg-HPvQZ-N-mSbdjkww_OYyzz75hgjxkiQ-QdeXwp8ljXSytVNcLUZX-kCY6PI'
     });
 
     // execute request

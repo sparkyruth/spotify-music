@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+// Services
 import { ArtistService } from '../services/artist.service';
 
 @Component({
@@ -9,13 +10,19 @@ import { ArtistService } from '../services/artist.service';
 })
 export class ArtistComponent implements OnInit {
   public artistId: string = '';
-  public artist: any;
+  public artist: any | null = null;
+  public topTracks: any[] = [];
 
-  constructor(private activatedRoute: ActivatedRoute, private artistService: ArtistService) { /*empty*/ }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private artistService: ArtistService,
+    private router: Router
+    ) { /*empty*/ }
 
   ngOnInit(): void {
     this.getActivatedRoute();
     this.getArtist();
+    this.getTopTracks();
   }
 
   // get artist id from active route
@@ -28,8 +35,22 @@ export class ArtistComponent implements OnInit {
 
   // get artist
   public getArtist(): void {
-    this.artistService.getArtist(this.artistId).subscribe((artista: any) => {
-      console.log('Artist Data:', artista);
+    this.artistService.getArtist(this.artistId).subscribe((artist: any) => {
+      this.artist = artist;
+      console.log('Artist Data:', artist);
+    }, (err) => {
+      console.log('Artist Error:', err);
+      console.error(err.message);
+    }, () => {
+      console.log('Artist Complete!');
+    });
+  }
+
+  // get artist top tracks
+  public getTopTracks(): void {
+    this.artistService.getTopTracks(this.artistId).subscribe((topTracks: any) => {
+      this.topTracks = topTracks;
+      console.log('Top tracks Data:', topTracks);
     }, (err) => {
       console.log('Artist Error:', err);
       console.error(err.message);

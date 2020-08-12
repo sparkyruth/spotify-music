@@ -6,11 +6,13 @@ import { ArtistComponent } from './artist-component/artist.component';
 
 // Services
 import { ArtistService } from './services/artist.service';
+import { ArtistTopTrackComponent } from './artist-top-track/artist-top-track.component';
 
 
 @NgModule({
   declarations: [
-    ArtistComponent
+    ArtistComponent,
+    ArtistTopTrackComponent
   ],
   imports: [
     CommonModule,
