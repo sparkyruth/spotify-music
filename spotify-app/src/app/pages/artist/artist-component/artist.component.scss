@@ -96,6 +96,11 @@ $black: black;
     background-color: $dark-gray;
   }
 
+  &__btn-title {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
   &__related-btn {
     margin-left: 10px;
   }
