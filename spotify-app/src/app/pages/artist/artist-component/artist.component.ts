@@ -13,7 +13,8 @@ export class ArtistComponent implements OnInit {
   public artist: any | null = null;
   public topTracks: any[] = [];
   public albums: any[] = [];
-  public more: boolean = false;
+  public moreAlbums: boolean = false;
+  public moreTracks: boolean = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -75,7 +76,11 @@ export class ArtistComponent implements OnInit {
     });
   }
 
-  public seeMore(): void {
-    this.more = !this.more;
+  public seeMoreAlbums(): void {
+    this.moreAlbums = !this.moreAlbums;
+  }
+
+  public seeMoreTracks(): void {
+    this.moreTracks = !this.moreTracks;
   }
 }
