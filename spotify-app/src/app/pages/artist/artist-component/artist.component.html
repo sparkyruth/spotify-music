@@ -25,8 +25,12 @@
                 [routerLink]="['/artist', artistId]">Overview</button> -->
             <h3 class="artist-section__btn-title">Overview</h3>
         </div>
-        <div class="artist-section__top-tracks-container">
+        <div class="artist-section__top-tracks-container"
+        [ngClass]="more ? 'show' : 'artist-section__top-tracks-container--hide'">
             <h2 class="ºartist-section__top-tracks-title">Top Tracks</h2>
+            <button class="artist-section__general-btn artist-section__btn" 
+            (click)="seeMore()"
+            >See more</button>
             <div class="artist-section__top-tracks-list-container" *ngIf="topTracks.length > 0">
                 <ul class="artist-section__top-tracks-list">
                     <app-artist-top-track [topTrack]="topTrack" *ngFor="let topTrack of topTracks">
@@ -35,7 +39,7 @@
             </div>
         </div>
         <div class="artist-section__albums-container" 
-        [ngClass]="more ? 'artist-section__albums-container--show' : 'artist-section__albums-container--hide'">
+        [ngClass]="more ? 'show' : 'artist-section__albums-container--hide'">
             <h2 class="artist-section__albums-title">Albums</h2>
             <button class="artist-section__general-btn artist-section__btn" 
             (click)="seeMore()"

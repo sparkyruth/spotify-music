@@ -22,6 +22,11 @@ $black: black;
 }
 
 // SCSS Styles
+.show {
+  overflow: visible;
+  height: auto;
+}
+
 .activate-link {
   background-color: $light-gray;
 }
@@ -109,6 +114,11 @@ $black: black;
     margin-top: 30px;
   }
 
+  &__top-tracks-container--hide {
+    height: 345px;
+    overflow: hidden;
+  }
+
   &__albums-container {
     margin-top: 30px;    
   }
@@ -116,11 +126,6 @@ $black: black;
   &__albums-container--hide {
     height: 370px;
     overflow: hidden;
-  }
-
-  &__albums-container--show {
-    overflow: visible;
-    height: auto;
   }
 
   &__albums-list-container {
