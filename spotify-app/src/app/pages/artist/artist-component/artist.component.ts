@@ -13,6 +13,7 @@ export class ArtistComponent implements OnInit {
   public artist: any | null = null;
   public topTracks: any[] = [];
   public albums: any[] = [];
+  public more: boolean = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -72,5 +73,9 @@ export class ArtistComponent implements OnInit {
     }, () => {
       console.log('Albums Complete!');
     });
+  }
+
+  public seeMore(): void {
+    this.more = !this.more;
   }
 }

@@ -105,7 +105,17 @@ $black: black;
   }
 
   &__albums-container {
-    margin-top: 30px;
+    margin-top: 30px;    
+  }
+
+  &__albums-container--hide {
+    height: 370px;
+    overflow: hidden;
+  }
+
+  &__albums-container--show {
+    overflow: visible;
+    height: auto;
   }
 
   &__albums-list-container {
