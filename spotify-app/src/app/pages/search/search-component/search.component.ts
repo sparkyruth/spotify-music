@@ -13,6 +13,8 @@ export class SearchComponent implements OnInit {
   // TO-DO: tipar
   public artistsList: any[] = [];
   public tracksList: any[] = [];
+  public moreArtists: boolean = false;
+  public moreTracks: boolean = false;
 
   constructor(
     private searchService: SearchService,
@@ -45,4 +47,11 @@ export class SearchComponent implements OnInit {
     });
   }
 
+  public seeMoreArtists(): void {
+    this.moreArtists = !this.moreArtists;
+  }
+
+  public seeMoreTracks(): void {
+    this.moreTracks = !this.moreTracks;
+  }
 }
