@@ -35,4 +35,8 @@ export class HomeComponent implements OnInit {
       console.log('Complete!');
     });
   }
+
+  public scrollTo(elementId: string): void {
+    document.getElementById(elementId).scrollIntoView();
+  }
 }

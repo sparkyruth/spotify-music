@@ -1,5 +1,25 @@
-// SCSS Styles
+// SCSS Variables
+$layout_bp_mobile: 360px;
+$layout_bp_tablet: 800px;
+$layout_bp_desktop: 1000px;
 
+$dark-gray: #181818;
+$light-gray: #b3b3b3;
+
+// SCSS Mixins
+@mixin tablet {
+    @media only screen and (min-width: $layout_bp_tablet) {
+      @content;
+    }
+  }
+  
+  @mixin desktop {
+    @media only screen and (min-width: $layout_bp_desktop) {
+      @content;
+    }
+  }
+
+// SCSS Styles
 html,
 body {
   margin: 0 auto;
@@ -58,6 +78,34 @@ hr {
 .btn-outline-success {
     margin-left: 5px;
 }
+
+.float-btn {
+    z-index: 1000;
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+    background-color: rgba(0, 0, 0, 0.863);
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    box-shadow: 1px 1px 1px $dark-gray;
+  }
+
+.float-btn:hover {
+    @include desktop {
+      color: $light-gray;
+    }
+  }
+
+.float-btn-icon {
+    margin-top:22px;
+    @include desktop {
+      margin-top: 15px;
+      font-size: 28px;
+    }
+  }
 
 
 // SCSS Animations

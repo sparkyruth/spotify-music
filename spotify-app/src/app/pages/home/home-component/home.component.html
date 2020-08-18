@@ -1,4 +1,4 @@
-<div class="new-releases">
+<div id="newReleasesId" class="new-releases">
     <h2 class="new-releases__title">New Releases</h2>
     <section class="new-releases__new-releases-section" *ngIf="newReleases.length > 0">
         <app-new-release-item
@@ -6,4 +6,9 @@
         *ngFor="let newRelease of newReleases"
         ></app-new-release-item>
     </section>
+    <div class="new-releases__float-btn-container">
+        <a class="float-btn" (click)="scrollTo('newReleasesId')">
+          <span class="fas fa-chevron-up float-btn-icon"></span>
+        </a>
+    </div>  
 </div>

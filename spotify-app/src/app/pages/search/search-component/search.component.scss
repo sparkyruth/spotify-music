@@ -138,33 +138,4 @@ $black: black;
   &__btn:hover {
     background-color: $dark-gray;
   }
-
-  &__float-btn {
-    z-index: 1000;
-    position:fixed;
-    width:60px;
-    height:60px;
-    bottom:40px;
-    right:40px;
-    background-color: rgba(0, 0, 0, 0.863);
-    color:#FFF;
-    border-radius:50px;
-    text-align:center;
-    box-shadow: 1px 1px 1px $dark-gray;
-  }
-
-  &__float-btn:hover {
-    @include desktop {
-      color: $light-gray;
-    }
-  }
-
-  &__float-btn-icon {
-    margin-top:22px;
-    @include desktop {
-      margin-top: 15px;
-      font-size: 28px;
-    }
-  }
-
 }
