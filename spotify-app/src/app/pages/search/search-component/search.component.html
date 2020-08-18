@@ -9,9 +9,10 @@
             <input class="search-section__input" type="text" id="inputSearch" placeholder="Search artist or track" (keyup)="search(searchTerm.value)" #searchTerm>
         </div>
     </div>  
-    <div class="search-section__search-item-container" *ngIf="artistsList.length > 0">
+    <div class="search-section__search-item-container">
         <div class="search-section__artists-container"
-            [ngClass]="moreArtists ? 'show' : 'search-section__artists-container--hide'">
+            [ngClass]="moreArtists ? 'show' : 'search-section__artists-container--hide'"
+            *ngIf="artistsList.length > 0">
             <div class="search-section__title-container">
                 <h2 class="search-section__title">Artists</h2>
             </div> 
@@ -25,7 +26,8 @@
             </div>             
         </div>
         <div class="search-section__tracks-container"
-        [ngClass]="moreTracks ? 'show' : 'search-section__tracks-container--hide'">
+        [ngClass]="moreTracks ? 'show' : 'search-section__tracks-container--hide'"
+        *ngIf="tracksList.length > 0">
             <div class="search-section__title-container">
                 <h2 class="search-section__title">Songs</h2>
             </div>
