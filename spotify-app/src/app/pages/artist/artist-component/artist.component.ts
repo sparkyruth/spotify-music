@@ -83,4 +83,8 @@ export class ArtistComponent implements OnInit {
   public seeMoreTracks(): void {
     this.moreTracks = !this.moreTracks;
   }
+
+  public scrollTo(elementId: string): void {
+    document.getElementById(elementId).scrollIntoView();
+  }
 }
