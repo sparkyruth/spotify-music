@@ -5,10 +5,10 @@
         [newRelease]="newRelease"
         *ngFor="let newRelease of newReleases"
         ></app-new-release-item>
+        <div class="new-releases__float-btn-container">
+            <a class="float-btn" (click)="scrollTo('newReleasesId')">
+              <span class="fas fa-chevron-up float-btn-icon"></span>
+            </a>
+        </div>  
     </section>
-    <div class="new-releases__float-btn-container">
-        <a class="float-btn" (click)="scrollTo('newReleasesId')">
-          <span class="fas fa-chevron-up float-btn-icon"></span>
-        </a>
-    </div>  
 </div>
