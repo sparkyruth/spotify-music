@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-artist-albums',
@@ -8,8 +9,11 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ArtistAlbumsComponent implements OnInit {
   @Input() album: any;
 
-  constructor() { /*empty*/ }
+  constructor(private router: Router) { /*empty*/ }
 
   ngOnInit(): void { /*empty*/ }
 
+  public seeAlbum(album: any): void {
+    this.router.navigate(['/album', album.id]);
+  }
 }
