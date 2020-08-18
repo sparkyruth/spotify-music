@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
   public openSideBar: boolean = false;
+  public activeLanguage = 'en';
 
-  constructor() { /*empty*/ }
+  constructor(private translate: TranslateService) {
+    // default language
+    this.translate.setDefaultLang(this.activeLanguage);
+  }
 
   ngOnInit(): void { /*empty*/ }
 
@@ -16,5 +21,11 @@ export class NavBarComponent implements OnInit {
   public openOrCloseNav(): void {
     this.openSideBar = !this.openSideBar;
     console.log('open side bar:', this.openSideBar);
+  }
+
+  // switch language
+  public switchLanguage(language: string) {
+    this.activeLanguage = language;
+    this.translate.use(language);
   }
 }

@@ -1,18 +1,29 @@
-<aside class="aside">
+<aside class="aside">  
   <div class="aside__title">
     <img class="aside__img" src="assets/img/spotify-icon.png" alt="spotify image">
     Spotify
   </div>
+  <div class="aside__language-container">
+    <button class="aside__language-btn" [ngClass]="{'active': activeLanguage == 'de'}" (click)="switchLanguage('de')">
+      Deutsch <img class="aside__btn-icon" src="assets/img/german.svg" alt="German flag">
+    </button>
+    <button class="aside__language-btn" [ngClass]="{'active': activeLanguage == 'en'}" (click)="switchLanguage('en')">
+      English <img class="aside__btn-icon" src="assets/img/usa.svg" alt="Usa flag">
+    </button>
+    <button class="aside__language-btn" [ngClass]="{'active': activeLanguage == 'es'}" (click)="switchLanguage('es')">
+      Spanish <img class="aside__btn-icon" src="assets/img/spain.svg" alt="Spain flag">
+    </button>
+  </div>
   <div class="aside__list-container">
     <ul class="aside__list">
       <li class="aside__list-item" routerLinkActive="active">
-        <a class="aside__list-anchor aside__list-anchor-home" routerLink="home">Home</a>
+        <a class="aside__list-anchor aside__list-anchor-home" routerLink="home">{{ 'home.home-text' | translate }}</a>
       </li>
       <li class="aside__list-item" routerLinkActive="active">
-        <a class="aside__list-anchor aside__list-anchor-search" routerLink="search">Search</a>
+        <a class="aside__list-anchor aside__list-anchor-search" routerLink="search">{{ 'home.search-text' | translate }}</a>
       </li>
     </ul>
-  </div>
+  </div>  
 </aside>
 
 <div class="side-bar-btn">
@@ -38,4 +49,3 @@
     </ul>
   </div> 
 </div>
-
