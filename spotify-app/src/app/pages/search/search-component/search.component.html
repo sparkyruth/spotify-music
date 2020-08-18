@@ -47,3 +47,13 @@
         </div>      
     </div>  
 </section>
+
+<app-search-modal [(showModal)]="showModal">
+    <!-- <div class="modal-header">
+        <h2>:(</h2>
+      </div> -->
+      <div class="modal-body">
+        <h4>Sorry... artist or track not found</h4>
+        <button class="search-section__btn search-section__btn--hover" routerLink="/search">Search again</button>
+      </div>
+</app-search-modal>

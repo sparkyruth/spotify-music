@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Location } from '@angular/common';
 
 // Services
@@ -10,11 +10,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
+  @Input() public showModal: boolean = false;
+
   // TO-DO: tipar
   public artistsList: any[] = [];
   public tracksList: any[] = [];
   public moreArtists: boolean = false;
   public moreTracks: boolean = false;
+
 
   constructor(
     private searchService: SearchService,
@@ -36,8 +39,10 @@ export class SearchComponent implements OnInit {
       this.tracksList = data.tracks.items;
 
       console.log('Data:', data);
-      console.log('Artists List:', this.artistsList);
-      console.log('Tracks List:', this.tracksList);
+
+      if (this.artistsList.length === 0 && this.tracksList.length === 0) {
+        this.showModal = true;
+      }
 
     }, (err) => {
       console.log('Error:', err);

@@ -138,4 +138,8 @@ $black: black;
   &__btn:hover {
     background-color: $dark-gray;
   }
+
+  &__btn--hover:hover {
+    background-color: $light-gray;
+  }
 }
