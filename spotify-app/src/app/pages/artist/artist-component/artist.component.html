@@ -50,7 +50,7 @@
                 <app-artist-albums [album]="album" *ngFor="let album of albums"></app-artist-albums>
             </div>
         </div>
-        <div class="search-section__float-btn-container" *ngIf="moreAlbums || moreTracks">
+        <div class="artist-section__float-btn-container" *ngIf="moreAlbums || moreTracks">
             <a class="float-btn" (click)="scrollTo('artistId')">
               <span class="fas fa-chevron-up float-btn-icon"></span>
             </a>
