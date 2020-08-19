@@ -8,11 +8,13 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class NavBarComponent implements OnInit {
   public openSideBar: boolean = false;
-  public activeLanguage = 'en';
+  public activeLanguage: string = 'en';
+  public moreLanguages: boolean = false;
 
   constructor(private translate: TranslateService) {
     // default language
     this.translate.setDefaultLang(this.activeLanguage);
+    console.log('See languages:', this.moreLanguages);
   }
 
   ngOnInit(): void { /*empty*/ }
@@ -27,5 +29,10 @@ export class NavBarComponent implements OnInit {
   public switchLanguage(language: string) {
     this.activeLanguage = language;
     this.translate.use(language);
+  }
+
+  public seeLanguages(): void {
+    this.moreLanguages = !this.moreLanguages;
+    console.log('See languages:', this.moreLanguages);
   }
 }

@@ -21,6 +21,14 @@ $black: black;
 }
 
 // SCSS Styles
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none !important;
+}
+
 .side-bar--hide {
     display: none;
     width: 0;
@@ -114,11 +122,20 @@ li.active {
     }
   }
 
+  &__language-btn-container {
+    margin-top: 20px;
+  }
+
   &__language-container {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
     width: 115px;
+  }
+
+  &__language-arrow-icon {
+    font-size: 15px;
+    padding-right: 5px;
   }
 
   &__language-btn {
@@ -154,6 +171,11 @@ li.active {
 
   &__language-btn:hover {
     background-color: $dark-gray;
+  }
+
+  &__language-container--hide {
+    height: 370px;
+    overflow: hidden;
   }
 
 }
