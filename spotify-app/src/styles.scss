@@ -8,16 +8,16 @@ $light-gray: #b3b3b3;
 
 // SCSS Mixins
 @mixin tablet {
-    @media only screen and (min-width: $layout_bp_tablet) {
-      @content;
-    }
+  @media only screen and (min-width: $layout_bp_tablet) {
+    @content;
   }
-  
-  @mixin desktop {
-    @media only screen and (min-width: $layout_bp_desktop) {
-      @content;
-    }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: $layout_bp_desktop) {
+    @content;
   }
+}
 
 // SCSS Styles
 html,
@@ -30,7 +30,7 @@ body {
 
   background-color: black;
   color: white;
-  
+
   font-size: 14px;
   font-family: Circular, spotify-circular, Helvetica, Arial, sans-serif;
 }
@@ -54,84 +54,105 @@ ul {
 }
 
 hr {
-    border-color: white;
+  border-color: white;
 }
 
 .pointer {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .img-circle {
-    border-radius: 100%;
-    width: 150px;
+  border-radius: 100%;
+  width: 150px;
 }
 
 .card-title,
 .card-text {
-    color: black;
+  color: black;
 }
 
 .badge {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 .btn-outline-success {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 .float-btn {
-    z-index: 1000;
-    position:fixed;
-    width:60px;
-    height:60px;
-    bottom:40px;
-    right:40px;
-    background-color: rgba(0, 0, 0, 0.863);
-    color:#FFF;
-    border-radius:50px;
-    text-align:center;
-    box-shadow: 1px 1px 1px $dark-gray;
-  }
+  z-index: 1000;
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: rgba(0, 0, 0, 0.863);
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 1px 1px 1px $dark-gray;
+}
 
 .float-btn:hover {
-    @include desktop {
-      color: $light-gray;
-    }
+  @include desktop {
+    color: $light-gray;
   }
+}
 
 .float-btn-icon {
-    margin-top:22px;
-    @include desktop {
-      margin-top: 15px;
-      font-size: 28px;
-    }
+  margin-top: 22px;
+  @include desktop {
+    margin-top: 15px;
+    font-size: 28px;
   }
+}
 
+.btn-template {
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  background-color: transparent;
+  padding: 7px 15px;
+  border: 1px solid hsla(0, 0%, 100%, 0.3);
+  box-sizing: border-box;
+  border-radius: 4px;
+  border-color: #fff;
+}
+
+.btn-template:hover {
+  background-color: #b3b3b3;
+}
 
 // SCSS Animations
 .animated {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
 .fast {
-    -webkit-animation-duration: 0.4s;
-    animation-duration: 0.4s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .fadeIn {
-    animation-name: fadeIn;
+  animation-name: fadeIn;
 }

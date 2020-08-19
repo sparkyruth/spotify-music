@@ -41,10 +41,12 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  // scroll to element
   public scrollTo(elementId: string): void {
     document.getElementById(elementId).scrollIntoView();
   }
 
+  // set language
   public setLanguage(): void {
     this.activeLanguage = this.globalService.getGlobalLanguage();
     this.translate.use(this.activeLanguage);

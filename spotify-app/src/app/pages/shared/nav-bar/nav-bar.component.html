@@ -4,20 +4,20 @@
     Spotify
   </div>
   <div class="aside__language-btn-container">
-    <button class="aside__language-btn" 
+    <button class="btn-template aside__language-btn" 
     (click)="seeLanguages()">
     <span class="fas fa-angle-down aside__language-arrow-icon"></span>Languages
   </button>
   </div>
   <div class="aside__language-container"
   [ngClass]="moreLanguages ? 'show' : 'hide'">
-    <button class="aside__language-btn" [ngClass]="{'active': activeLanguage == 'de'}" (click)="switchLanguage('de')">
+    <button class="btn-template aside__language-btn" [ngClass]="{'active': activeLanguage == 'de'}" (click)="switchLanguage('de')">
       Deutsch <img class="aside__btn-icon" src="assets/img/german.svg" alt="German flag">
     </button>
-    <button class="aside__language-btn" [ngClass]="{'active': activeLanguage == 'en'}" (click)="switchLanguage('en')">
+    <button class="btn-template aside__language-btn" [ngClass]="{'active': activeLanguage == 'en'}" (click)="switchLanguage('en')">
       English <img class="aside__btn-icon" src="assets/img/usa.svg" alt="Usa flag">
     </button>
-    <button class="aside__language-btn" [ngClass]="{'active': activeLanguage == 'es'}" (click)="switchLanguage('es')">
+    <button class="btn-template aside__language-btn" [ngClass]="{'active': activeLanguage == 'es'}" (click)="switchLanguage('es')">
       Spanish <img class="aside__btn-icon" src="assets/img/spain.svg" alt="Spain flag">
     </button>
   </div>

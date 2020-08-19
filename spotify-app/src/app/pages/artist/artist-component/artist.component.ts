@@ -43,7 +43,7 @@ export class ArtistComponent implements OnInit {
     });
   }
 
-  // get artist
+  // get artist info
   public getArtist(): void {
     this.artistService.getArtist(this.artistId).subscribe((artist: any) => {
       this.artist = artist;
@@ -69,7 +69,7 @@ export class ArtistComponent implements OnInit {
     });
   }
 
-  // get artist top tracks
+  // get artist albums
   public getAlbums(): void {
     this.artistService.getAlbums(this.artistId).subscribe((albums: any) => {
       this.albums = albums;
@@ -82,19 +82,23 @@ export class ArtistComponent implements OnInit {
     });
   }
 
+  // set language
   public setLanguage(): void {
     this.activeLanguage = this.globalService.getGlobalLanguage();
     this.translate.use(this.activeLanguage);
   }
 
+  // to display or hide albums
   public seeMoreAlbums(): void {
     this.moreAlbums = !this.moreAlbums;
   }
 
+  // to display or hide tracks
   public seeMoreTracks(): void {
     this.moreTracks = !this.moreTracks;
   }
 
+  // scroll to element
   public scrollTo(elementId: string): void {
     document.getElementById(elementId).scrollIntoView();
   }

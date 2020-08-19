@@ -1,7 +1,8 @@
-import { GlobalService } from 'src/app/services/global.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
+// Services
+import { GlobalService } from 'src/app/services/global.service';
 @Component({
   selector: 'app-artist-top-track',
   templateUrl: './artist-top-track.component.html',
@@ -24,6 +25,7 @@ export class ArtistTopTrackComponent implements OnInit {
     console.log('play:', this.play);
   }
 
+  // set language
   public setLanguage(): void {
     this.activeLanguage = this.globalService.getGlobalLanguage();
     this.translate.use(this.activeLanguage);
