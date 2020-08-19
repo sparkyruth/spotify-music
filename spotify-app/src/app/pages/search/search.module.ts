@@ -3,6 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { SearchRoutingModule } from './search-routing.module';
 
+//Translation
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 // Components
 import { SearchComponent } from './search-component/search.component';
 import { SearchArtistItemComponent } from './search-artist-item/search-artist-item.component';
@@ -26,6 +31,16 @@ import { PipesModule } from '../../pipes/pipes.module';
     CommonModule,
     SearchRoutingModule,
     PipesModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (http: HttpClient) => {
+          return new TranslateHttpLoader(http);
+        },
+        deps: [ HttpClient ]
+      }
+    })
   ],
   providers: [
     SearchService,

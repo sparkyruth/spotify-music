@@ -12,26 +12,26 @@
             <h2 class="artist-section__name">{{ artist.name }}</h2>
         </div>
         <div class="artist-section__followers-container">
-            <span>{{ artist.followers.total }} followers</span>
+            <span>{{ artist.followers.total }} {{ "artist.followers" | translate }}</span>
         </div>
         <div class="artist-section__profile-btn-container">
             <a class="artist-section__profile-btn artist-section__btn" [href]="artist.external_urls.spotify"
-                target="_blank">View Profile</a>
+                target="_blank">{{ "artist.profile-btn" | translate }}</a>
         </div>
     </div>
     <div class="artist-section__main-container">
         <div class="artist-section__btn-container">
             <!-- <button class="artist-section__general-btn artist-section__btn" routerLinkActive="activate-link"
                 [routerLink]="['/artist', artistId]">Overview</button> -->
-            <h3 class="artist-section__btn-title">Overview</h3>
+            <h3 class="artist-section__btn-title">{{ "artist.overview" | translate }}</h3>
         </div>
         <div class="artist-section__top-tracks-container"
         [ngClass]="moreTracks ? 'show' : 'artist-section__top-tracks-container--hide'">
-            <h2 class="artist-section__top-tracks-title">Top Tracks</h2>
+            <h2 class="artist-section__top-tracks-title">{{ 'artist.title' | translate }}</h2>
             <div class="artist-section__see-more-container">
                 <button class="artist-section__general-btn artist-section__btn" 
                 (click)="seeMoreTracks()"
-                >See more</button>
+                >{{ "artist.more-btn" | translate }}</button>
             </div>            
             <div class="artist-section__top-tracks-list-container" *ngIf="topTracks.length > 0">
                 <ul class="artist-section__top-tracks-list">
@@ -42,10 +42,10 @@
         </div>
         <div class="artist-section__albums-container" 
         [ngClass]="moreAlbums ? 'show' : 'artist-section__albums-container--hide'">
-            <h2 class="artist-section__albums-title">Albums</h2>
+            <h2 class="artist-section__albums-title">{{ "artist.album-title" | translate }}</h2>
             <button class="artist-section__general-btn artist-section__btn" 
             (click)="seeMoreAlbums()"
-            >See more</button>
+            >{{ "artist.more-btn" | translate }}</button>
             <div class="artist-section__albums-list-container" *ngIf="albums.length > 0">
                 <app-artist-albums [album]="album" *ngFor="let album of albums"></app-artist-albums>
             </div>

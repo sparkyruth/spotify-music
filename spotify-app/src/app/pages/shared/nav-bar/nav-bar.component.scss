@@ -97,6 +97,8 @@ li.active {
 
   &__list-anchor {
     @include desktop {
+      cursor: pointer;
+
       font-weight: 600;
       line-height: 16px;
 

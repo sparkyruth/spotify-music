@@ -3,6 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { ArtistRoutingModule } from './artist-routing.module';
 
+//Translation
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 // Modules
 import { PipesModule } from 'src/app/pipes/pipes.module';
 
@@ -24,6 +29,16 @@ import { ArtistService } from './services/artist.service';
     CommonModule,
     ArtistRoutingModule,
     PipesModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (http: HttpClient) => {
+          return new TranslateHttpLoader(http);
+        },
+        deps: [ HttpClient ]
+      }
+    })
   ],
   providers: [
     ArtistService,

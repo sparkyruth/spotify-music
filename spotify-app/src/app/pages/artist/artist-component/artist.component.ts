@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+
 // Services
 import { ArtistService } from '../services/artist.service';
+import { GlobalService } from 'src/app/services/global.service';
 
 @Component({
   selector: 'app-artist',
@@ -15,14 +18,17 @@ export class ArtistComponent implements OnInit {
   public albums: any[] = [];
   public moreAlbums: boolean = false;
   public moreTracks: boolean = false;
+  public activeLanguage: string = '';
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private artistService: ArtistService,
-    private router: Router
+    private globalService: GlobalService,
+    private translate: TranslateService
     ) { /*empty*/ }
 
   ngOnInit(): void {
+    this.setLanguage();
     this.getActivatedRoute();
     this.getArtist();
     this.getTopTracks();
@@ -74,6 +80,11 @@ export class ArtistComponent implements OnInit {
     }, () => {
       console.log('Albums Complete!');
     });
+  }
+
+  public setLanguage(): void {
+    this.activeLanguage = this.globalService.getGlobalLanguage();
+    this.translate.use(this.activeLanguage);
   }
 
   public seeMoreAlbums(): void {

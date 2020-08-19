@@ -14,11 +14,11 @@
             [ngClass]="moreArtists ? 'show' : 'search-section__artists-container--hide'"
             *ngIf="artistsList.length > 0">
             <div class="search-section__title-container">
-                <h2 class="search-section__title">Artists</h2>
+                <h2 class="search-section__title">{{ "search.artist-title" | translate }}</h2>
             </div> 
             <button class="search-section__btn" 
             (click)="seeMoreArtists()"
-            >See more</button>
+            >{{ "search.more-btn" | translate }}</button>
             <div class="search-section__search-item">
                 <app-search-artist-item
                 [artist]="artist" *ngFor="let artist of artistsList"
@@ -29,11 +29,11 @@
         [ngClass]="moreTracks ? 'show' : 'search-section__tracks-container--hide'"
         *ngIf="tracksList.length > 0">
             <div class="search-section__title-container">
-                <h2 class="search-section__title">Songs</h2>
+                <h2 class="search-section__title">{{ "search.tracks-title" | translate }}</h2>
             </div>
             <button class="search-section__btn" 
             (click)="seeMoreTracks()"
-            >See more</button>
+            >{{ "search.more-btn" | translate }}</button>
             <div class="search-section__search-item">
                 <app-search-track-item
                 [track]="track" *ngFor="let track of tracksList"
@@ -53,7 +53,7 @@
         <h2>:(</h2>
       </div> -->
       <div class="modal-body">
-        <h4>Sorry... artist or track not found</h4>
-        <button class="search-section__btn search-section__btn--hover" routerLink="/search">Search again</button>
+        <h4>{{ "modal.body" | translate }}</h4>
+        <button class="search-section__btn search-section__btn--hover" routerLink="/search">{{ "modal.search-btn" | translate }}</button>
       </div>
 </app-search-modal>

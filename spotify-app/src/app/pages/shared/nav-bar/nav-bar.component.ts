@@ -1,5 +1,7 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { GlobalService } from 'src/app/services/global.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -11,7 +13,11 @@ export class NavBarComponent implements OnInit {
   public activeLanguage: string = 'en';
   public moreLanguages: boolean = false;
 
-  constructor(private translate: TranslateService) {
+  constructor(
+    private translate: TranslateService,
+    private router: Router,
+    private globalService: GlobalService,
+    ) {
     // default language
     this.translate.setDefaultLang(this.activeLanguage);
     console.log('See languages:', this.moreLanguages);
@@ -29,10 +35,15 @@ export class NavBarComponent implements OnInit {
   public switchLanguage(language: string) {
     this.activeLanguage = language;
     this.translate.use(language);
+    this.globalService.setGlobalLanguage(language);
   }
 
   public seeLanguages(): void {
     this.moreLanguages = !this.moreLanguages;
     console.log('See languages:', this.moreLanguages);
+  }
+
+  public navigate(): void {
+    this.router.navigate(['home', this.activeLanguage]);
   }
 }
