@@ -129,6 +129,21 @@ hr {
   background-color: #b3b3b3;
 }
 
+.back-btn {
+  padding-right: 7px;
+  border: none;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background-color: $dark-gray;
+  color: #fff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
 // SCSS Animations
 .animated {
   -webkit-animation-duration: 1s;

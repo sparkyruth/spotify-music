@@ -42,21 +42,6 @@ $black: black;
     border-radius: 50%;
   }
 
-  &__back-btn {
-    padding-right: 7px;
-    border: none;
-    height: 32px;
-    width: 32px;
-    border-radius: 50%;
-    background-color: $dark-gray;
-    color: #fff;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    cursor: pointer;
-  }
-
   &__header-img-container {
     margin-top: 20px;
   }
