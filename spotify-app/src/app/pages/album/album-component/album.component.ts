@@ -5,6 +5,9 @@ import { Location } from '@angular/common';
 // Services
 import { AlbumService } from '../services/album.service';
 
+// Models
+import { APIAlbums } from '../models/album-model';
+
 @Component({
   selector: 'app-album',
   templateUrl: './album.component.html',
@@ -12,7 +15,7 @@ import { AlbumService } from '../services/album.service';
 })
 export class AlbumComponent implements OnInit {
   public albumId: string = '';
-  public album: any | null = null;
+  public album: APIAlbums | null = null;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -35,7 +38,7 @@ export class AlbumComponent implements OnInit {
 
   // get album info
   public getAlbum(): void {
-    this.albumService.getAlbum(this.albumId).subscribe((album: any) => {
+    this.albumService.getAlbum(this.albumId).subscribe((album: APIAlbums) => {
       this.album = album;
       console.log('Album Data:', album);
     }, (err) => {

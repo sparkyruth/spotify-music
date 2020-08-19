@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
-import { GlobalService } from 'src/app/services/global.service';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+
+// Models
+import { APIAlbums } from '../models/album-model';
+
+// Services
+import { GlobalService } from 'src/app/services/global.service';
 
 @Injectable() // service provided in Artist module
 export class AlbumService {
@@ -9,15 +14,14 @@ export class AlbumService {
   constructor(private globalService: GlobalService) { /*empty*/ }
 
   // get album info
-  public getAlbum(albumId: string): Observable<any> {
+  public getAlbum(albumId: string): Observable<APIAlbums> {
     const albumUrl: string = `albums/${ albumId }`;
 
     return this.globalService.getQuery(albumUrl).pipe(
-      map((res: any) => {
+      map((res: APIAlbums) => {
         if (!res) {
           throw new Error('Value expected!');
         } else {
-          // TO-DO: tipar
           return res;
         }
       }),
