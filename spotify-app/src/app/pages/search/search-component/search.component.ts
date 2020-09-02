@@ -14,7 +14,6 @@ import { TranslateService } from '@ngx-translate/core';
 export class SearchComponent implements OnInit {
   @Input() public showModal: boolean = false;
 
-  // TO-DO: tipar
   public artistsList: any[] = [];
   public tracksList: any[] = [];
   public moreArtists: boolean = false;

@@ -19,7 +19,6 @@ export class SearchService {
         if (!res) {
           throw new Error('Value expected!');
         } else {
-          // TO-DO: tipar
           console.log('res:', res);
           return res;
         }

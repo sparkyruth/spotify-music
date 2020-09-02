@@ -24,7 +24,6 @@ export class ArtistService {
         if (!res) {
           throw new Error('Value expected!');
         } else {
-          // TO-DO: tipar
           return res['tracks'];
         }
       }),
