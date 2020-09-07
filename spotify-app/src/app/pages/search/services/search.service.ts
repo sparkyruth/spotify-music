@@ -5,20 +5,25 @@ import { map, catchError } from 'rxjs/operators';
 // Services
 import { GlobalService } from 'src/app/services/global.service';
 
+// Models
+import { APISearch } from '../models/search-model';
+
 @Injectable() // service provided in module
 export class SearchService {
 
   constructor(private globalService: GlobalService) { /*empty*/ }
 
   // get both tracks and artist from spotify
-  public getTracksAndArtists(term: string): Observable<any> {
+  public getTracksAndArtists(term: string): Observable<APISearch[]> {
     const searchUrl: string = `search?q=${ term }&type=track%2Cartist`;
+    console.log(searchUrl);
 
     return this.globalService.getQuery(searchUrl).pipe(
-      map((res: any) => {
+      map((res: APISearch[]) => {
         if (!res) {
           throw new Error('Value expected!');
         } else {
+          debugger
           console.log('res:', res);
           return res;
         }
