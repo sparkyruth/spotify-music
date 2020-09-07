@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Location } from '@angular/common';
 
 // Services
 import { SearchService } from '../services/search.service';
 import { Router } from '@angular/router';
 import { GlobalService } from 'src/app/services/global.service';
 import { TranslateService } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -20,16 +20,9 @@ export class SearchComponent implements OnInit {
   public moreTracks: boolean = false;
   public activeLanguage: string = 'en';
 
-  constructor(
-    private searchService: SearchService,
-    private router: Router,
-    private globalService: GlobalService,
-    private translate: TranslateService
-    ) { /*empty*/ }
+  constructor( private searchService: SearchService, private router: Router ) { /*empty*/ }
 
-  ngOnInit(): void { 
-    this.setLanguage();
-   }
+  ngOnInit(): void { /*empty*/ }
 
   // search both artist and track
   public search(term: string): void {
@@ -56,19 +49,17 @@ export class SearchComponent implements OnInit {
     });
   }
 
-  public setLanguage(): void {
-    this.activeLanguage = this.globalService.getGlobalLanguage();
-    this.translate.use(this.activeLanguage);
-  }
-
+  // update variable to see more/less artists
   public seeMoreArtists(): void {
     this.moreArtists = !this.moreArtists;
   }
 
+  // update variable to see more/less tracks
   public seeMoreTracks(): void {
     this.moreTracks = !this.moreTracks;
   }
 
+  // scroll to element
   public scrollTo(elementId: string): void {
     document.getElementById(elementId).scrollIntoView();
   }

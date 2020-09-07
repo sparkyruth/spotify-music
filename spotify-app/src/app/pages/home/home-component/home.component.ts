@@ -15,7 +15,7 @@ import { GlobalService } from 'src/app/services/global.service';
 })
 export class HomeComponent implements OnInit {
   public newReleases: NewReleasesItem[] = [];
-  public activeLanguage: string = 'en';
+  // public activeLanguage: string = 'en';
 
   constructor(
     private newReleasesService: NewReleasesService,
@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
     ){ /*empty*/ }
 
   ngOnInit(): void {
-    this.setLanguage();
+    // this.setLanguage();
     this.getNewReleases();
   }
 
@@ -47,8 +47,8 @@ export class HomeComponent implements OnInit {
   }
 
   // set language
-  public setLanguage(): void {
-    this.activeLanguage = this.globalService.getGlobalLanguage();
-    this.translate.use(this.activeLanguage);
-  }
+  // public setLanguage(): void {
+  //   this.activeLanguage = this.globalService.getGlobalLanguage();
+  //   this.translate.use(this.activeLanguage);
+  // }
 }

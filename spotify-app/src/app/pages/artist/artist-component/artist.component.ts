@@ -18,17 +18,10 @@ export class ArtistComponent implements OnInit {
   public albums: any[] = [];
   public moreAlbums: boolean = false;
   public moreTracks: boolean = false;
-  public activeLanguage: string = '';
 
-  constructor(
-    private activatedRoute: ActivatedRoute,
-    private artistService: ArtistService,
-    private globalService: GlobalService,
-    private translate: TranslateService
-    ) { /*empty*/ }
+  constructor( private activatedRoute: ActivatedRoute, private artistService: ArtistService ) { /*empty*/ }
 
   ngOnInit(): void {
-    this.setLanguage();
     this.getActivatedRoute();
     this.getArtist();
     this.getTopTracks();
@@ -82,18 +75,12 @@ export class ArtistComponent implements OnInit {
     });
   }
 
-  // set language
-  public setLanguage(): void {
-    this.activeLanguage = this.globalService.getGlobalLanguage();
-    this.translate.use(this.activeLanguage);
-  }
-
-  // to display or hide albums
+  // update variable to see more/less albums
   public seeMoreAlbums(): void {
     this.moreAlbums = !this.moreAlbums;
   }
 
-  // to display or hide tracks
+  // update variable to see more/less tracks
   public seeMoreTracks(): void {
     this.moreTracks = !this.moreTracks;
   }

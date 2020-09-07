@@ -1,8 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 
-// Services
-import { GlobalService } from 'src/app/services/global.service';
 @Component({
   selector: 'app-artist-top-track',
   templateUrl: './artist-top-track.component.html',
@@ -11,11 +8,8 @@ import { GlobalService } from 'src/app/services/global.service';
 export class ArtistTopTrackComponent implements OnInit {
   @Input() topTrack: any;
   public play: boolean = false;
-  public activeLanguage: string = 'en';
 
-  constructor(private globalService: GlobalService, private translate: TranslateService) {
-    this.setLanguage();
-  }
+  constructor() { /*empty*/ }
 
   ngOnInit(): void { /*empty*/ }
 
@@ -23,11 +17,5 @@ export class ArtistTopTrackComponent implements OnInit {
   public player(): void {
     this.play = !this.play;
     console.log('play:', this.play);
-  }
-
-  // set language
-  public setLanguage(): void {
-    this.activeLanguage = this.globalService.getGlobalLanguage();
-    this.translate.use(this.activeLanguage);
   }
 }

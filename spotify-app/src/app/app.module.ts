@@ -16,6 +16,9 @@ import { NavBarComponent } from './pages/shared/nav-bar/nav-bar.component';
 // Services
 import { GlobalService } from './services/global.service';
 
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -29,10 +32,8 @@ import { GlobalService } from './services/global.service';
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: (http: HttpClient) => {
-          return new TranslateHttpLoader(http);
-        },
-        deps: [ HttpClient ]
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient],
       }
     })
   ],
@@ -43,4 +44,5 @@ import { GlobalService } from './services/global.service';
     AppComponent
   ]
 })
+
 export class AppModule { }
