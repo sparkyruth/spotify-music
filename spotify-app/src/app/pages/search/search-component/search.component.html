@@ -6,7 +6,7 @@
             </button>
         </div>
         <div class="search-section__input-container">
-            <input class="search-section__input" type="text" id="inputSearch" placeholder="Search artist or track" (keyup)="search(searchTerm.value)" #searchTerm>
+            <input class="search-section__input" type="text" id="inputSearch" placeholder="Search artist or track" (keyup)="search(searchTerm.value)" (keydown.backspace)="search(searchTerm.value)" #searchTerm>
         </div>
     </div>  
     <div class="search-section__search-item-container">

@@ -21,8 +21,7 @@ export class SearchService {
       map((res: APISearch[]) => {
         if (!res) {
           throw new Error('Value expected!');
-        } else {
-          debugger
+        } else {          
           console.log('res:', res);
           return res;
         }
