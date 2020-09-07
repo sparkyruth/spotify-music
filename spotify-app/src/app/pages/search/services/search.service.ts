@@ -16,7 +16,6 @@ export class SearchService {
   // get both tracks and artist from spotify
   public getTracksAndArtists(term: string): Observable<APISearch[]> {
     const searchUrl: string = `search?q=${ term }&type=track%2Cartist`;
-    console.log(searchUrl);
 
     return this.globalService.getQuery(searchUrl).pipe(
       map((res: APISearch[]) => {
