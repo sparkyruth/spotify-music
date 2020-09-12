@@ -34,7 +34,7 @@ This App consumes the Spotify API to view the latest releases on the platform wh
 - Spotify Widgets
 - Multilingual
 
-![](src/assets/img/readme/multilingual.png)
+![](src/assets/img/readme/multilingual.gif)
 
 - Image Verification
 - Uri Verification
