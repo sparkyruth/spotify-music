@@ -11,7 +11,7 @@ ng serve --open
 
 This App consumes the Spotify API to view the latest releases on the platform whether they are artists, albums or songs. The option to search by artist or song has also been enabled.
 
-![](src/assets/img/readme.png)
+![](src/assets/img/readme/home.png)
 
 ### Technical Specification 💻
 
@@ -33,6 +33,9 @@ This App consumes the Spotify API to view the latest releases on the platform wh
 - Spotify API
 - Spotify Widgets
 - Multilingual
+
+![](src/assets/img/readme/multilingual.png)
+
 - Image Verification
 - Uri Verification
 - Scroll To
