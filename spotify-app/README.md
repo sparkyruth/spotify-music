@@ -43,8 +43,17 @@ This App consumes the Spotify API to view the latest releases on the platform wh
 - See More Content
 - Lazy Loading
 - New Releases
+
+![](src/assets/img/readme/home.png)
+
 - Albums
+
+![](src/assets/img/readme/albums.gif)
+
 - Search
+
+![](src/assets/img/readme/search.gif)
+
 - Artist
-- Artist Top Tracks
-- Artist Albums
+
+![](src/assets/img/readme/artist.gif)
